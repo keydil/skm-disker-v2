@@ -33,7 +33,7 @@ function calculateDetailedIKM(surveys: Survey[]) {
       color: "#6b7280",
       unsurDetails: PERTANYAAN_SKM.map((p, i) => ({
         no: i + 1,
-        unsur: p.label,
+        unsur: p.shortLabel,
         jumlahResponden: 0,
         totalNilai: 0,
         nilaiIndex: 0,
@@ -58,7 +58,7 @@ function calculateDetailedIKM(surveys: Survey[]) {
 
     return {
       no: i + 1,
-      unsur: p.label,
+      unsur: p.shortLabel,
       jumlahResponden: surveys.length,
       totalNilai,
       nilaiIndex: Number(nilaiIndex.toFixed(2)),
@@ -173,7 +173,7 @@ export function IKMAnalysisDashboard({ surveys }: Props) {
               ) : (
                 <>
                   <Download className="mr-2 h-4 w-4" />
-                  Export to Excel
+                  Export Excel
                 </>
               )}
             </Button>
@@ -190,7 +190,7 @@ export function IKMAnalysisDashboard({ surveys }: Props) {
               <div className="order-2 md:order-1">
                 <p className="text-xs md:text-sm font-medium text-muted-foreground">Total Responden</p>
                 <p className="text-2xl md:text-4xl font-bold text-foreground mt-1 md:mt-2">{analysis.totalResponden}</p>
-                <p className="text-xs md:text-sm text-primary mt-1 md:mt-2">{getLabel(selectedPelayanan)}</p>
+                <p className="text-xs md:text-sm text-primary mt-1 md:mt-2 truncate">{getLabel(selectedPelayanan)}</p>
               </div>
               <div className="order-1 md:order-2 h-8 w-8 md:h-12 md:w-12 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center">
                 <Users className="h-4 w-4 md:h-6 md:w-6 text-primary" />
