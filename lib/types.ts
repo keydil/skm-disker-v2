@@ -96,6 +96,7 @@ export const PERTANYAAN_SKM = [
   {
     key: "u1",
     label: "Bagaimana pendapat Saudara tentang kesesuaian persyaratan pelayanan dengan jenis pelayanannya?",
+    shortLabel: "Persyaratan pelayanan",
     opsi: [
       { value: 1, label: "Tidak sesuai", emoji: "😞" },
       { value: 2, label: "Kurang sesuai", emoji: "😐" },
@@ -106,6 +107,7 @@ export const PERTANYAAN_SKM = [
   {
     key: "u2",
     label: "Bagaimana pemahaman Saudara tentang kemudahan prosedur pelayanan di unit ini?",
+    shortLabel: "Prosedur pelayanan",
     opsi: [
       { value: 1, label: "Tidak mudah", emoji: "😞" },
       { value: 2, label: "Kurang mudah", emoji: "😐" },
@@ -116,6 +118,7 @@ export const PERTANYAAN_SKM = [
   {
     key: "u3",
     label: "Bagaimana pendapat Saudara tentang kecepatan waktu dalam memberikan pelayanan?",
+    shortLabel: "Waktu pelayanan",
     opsi: [
       { value: 1, label: "Tidak cepat", emoji: "😞" },
       { value: 2, label: "Kurang cepat", emoji: "😐" },
@@ -126,6 +129,7 @@ export const PERTANYAAN_SKM = [
   {
     key: "u4",
     label: "Bagaimana pendapat Saudara tentang kewajaran biaya/tarif dalam pelayanan?",
+    shortLabel: "Biaya/tarif",
     opsi: [
       { value: 1, label: "Sangat mahal", emoji: "😞" },
       { value: 2, label: "Cukup mahal", emoji: "😐" },
@@ -137,6 +141,7 @@ export const PERTANYAAN_SKM = [
     key: "u5",
     label:
       "Bagaimana pendapat Saudara tentang kesesuaian produk pelayanan antara yang tercantum dalam standar pelayanan dengan hasil yang diberikan?",
+    shortLabel: "Produk spesifikasi jenis pelayanan",
     opsi: [
       { value: 1, label: "Tidak sesuai", emoji: "😞" },
       { value: 2, label: "Kurang sesuai", emoji: "😐" },
@@ -147,6 +152,7 @@ export const PERTANYAAN_SKM = [
   {
     key: "u6",
     label: "Bagaimana pendapat Saudara tentang kompetensi/kemampuan petugas dalam pelayanan?",
+    shortLabel: "Kompetensi pelaksana",
     opsi: [
       { value: 1, label: "Tidak kompeten", emoji: "😞" },
       { value: 2, label: "Kurang kompeten", emoji: "😐" },
@@ -157,6 +163,7 @@ export const PERTANYAAN_SKM = [
   {
     key: "u7",
     label: "Bagaimana pendapat Saudara tentang perilaku petugas dalam pelayanan terkait kesopanan dan keramahan?",
+    shortLabel: "Perilaku pelaksana",
     opsi: [
       { value: 1, label: "Tidak sopan dan ramah", emoji: "😞" },
       { value: 2, label: "Kurang sopan dan ramah", emoji: "😐" },
@@ -167,6 +174,7 @@ export const PERTANYAAN_SKM = [
   {
     key: "u8",
     label: "Bagaimana pendapat Saudara tentang penanganan pengaduan pengguna layanan?",
+    shortLabel: "Penanganan pengaduan",
     opsi: [
       { value: 1, label: "Tidak ada", emoji: "😞" },
       { value: 2, label: "Ada tetapi tidak berfungsi", emoji: "😐" },
@@ -177,6 +185,7 @@ export const PERTANYAAN_SKM = [
   {
     key: "u9",
     label: "Bagaimana pendapat Saudara tentang kualitas sarana dan prasarana?",
+    shortLabel: "Sarana dan prasarana",
     opsi: [
       { value: 1, label: "Buruk", emoji: "😞" },
       { value: 2, label: "Cukup", emoji: "😐" },
