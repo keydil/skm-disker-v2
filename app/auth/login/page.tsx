@@ -102,7 +102,7 @@ export default function LoginPage() {
                   </div>
                   {error && (
                     <p className="rounded-md bg-destructive/10 p-2 text-center text-sm text-destructive">
-                      {error}
+                      Login failed. Please try again.
                     </p>
                   )}
                   <Button type="submit" className="w-full" disabled={isLoading}>
