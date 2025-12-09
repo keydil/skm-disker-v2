@@ -405,7 +405,7 @@ export function SurveyForm() {
                   </Label>
                   <Input
                     id="nama"
-                    placeholder="Contoh: Budi Santoso"
+                    placeholder="Contoh: Fadhil Firdaus"
                     value={nama}
                     onChange={(e) => handleNamaChange(e.target.value)}
                     className={
