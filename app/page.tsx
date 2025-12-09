@@ -147,7 +147,7 @@ export default function HomePage() {
               {/* ------------------- */}
 
               <div>
-                <h1 className="text-xl font-semibold text-foreground">SKM</h1>
+                <h1 className="text-xl font-semibold text-foreground">SKM Disnaker Kota bandung</h1>
                 <p className="text-sm text-muted-foreground">
                   Survey Kepuasan Masyarakat
                 </p>
