@@ -1,43 +1,50 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { getSupabaseBrowserClient } from "@/lib/supabase/client"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
-import { ClipboardList, ShieldCheck } from "lucide-react"
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import Image from "next/image";
+import { ClipboardList, ShieldCheck } from "lucide-react";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState<string | null>(null)
-  const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const supabase = getSupabaseBrowserClient()
-    setIsLoading(true)
-    setError(null)
+    e.preventDefault();
+    const supabase = getSupabaseBrowserClient();
+    setIsLoading(true);
+    setError(null);
 
     try {
       const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
-      })
-      if (error) throw error
-      router.push("/admin/dashboard")
+      });
+      if (error) throw error;
+      router.push("/admin/dashboard");
     } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "Login gagal")
+      setError(error instanceof Error ? error.message : "Login gagal");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <div className="flex min-h-screen w-full items-center justify-center bg-muted/30 p-6">
@@ -46,9 +53,15 @@ export default function LoginPage() {
           {/* Logo */}
           <div className="flex justify-center">
             <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <ClipboardList className="h-5 w-5 text-primary-foreground" />
-              </div>
+              <Image
+                src="/disnaker-logo.svg"
+                alt="Logo SKM Disnaker"
+                width={40}
+                height={40}
+                className="h-11 w-11 object-contain"
+              />
+              {/* -------------------- */}
+
               <span className="text-xl font-semibold">SKM</span>
             </Link>
           </div>
@@ -59,7 +72,9 @@ export default function LoginPage() {
                 <ShieldCheck className="h-6 w-6 text-primary" />
               </div>
               <CardTitle className="text-2xl">Login Admin</CardTitle>
-              <CardDescription>Masuk untuk mengakses dashboard admin</CardDescription>
+              <CardDescription>
+                Masuk untuk mengakses dashboard admin
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleLogin}>
@@ -86,7 +101,9 @@ export default function LoginPage() {
                     />
                   </div>
                   {error && (
-                    <p className="rounded-md bg-destructive/10 p-2 text-center text-sm text-destructive">{error}</p>
+                    <p className="rounded-md bg-destructive/10 p-2 text-center text-sm text-destructive">
+                      {error}
+                    </p>
                   )}
                   <Button type="submit" className="w-full" disabled={isLoading}>
                     {isLoading ? "Memproses..." : "Login"}
@@ -103,5 +120,5 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
