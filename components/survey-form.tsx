@@ -581,24 +581,43 @@ export function SurveyForm() {
                   }
                   className="grid grid-cols-2 gap-3 sm:grid-cols-4"
                 >
-                  {pertanyaan.opsi.map((opsi) => (
-                    <div key={opsi.value}>
-                      <RadioGroupItem
-                        value={opsi.value.toString()}
-                        id={`${pertanyaan.key}-${opsi.value}`}
-                        className="peer sr-only"
-                      />
-                      <Label
-                        htmlFor={`${pertanyaan.key}-${opsi.value}`}
-                        className="flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-border bg-background p-4 cursor-pointer transition-all hover:bg-muted hover:border-primary/50 peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10 peer-data-[state=checked]:shadow-md"
-                      >
-                        <span className="text-3xl">{opsi.emoji}</span>
-                        <span className="text-xs text-center font-medium leading-tight">
-                          {opsi.label}
-                        </span>
-                      </Label>
-                    </div>
-                  ))}
+                  {pertanyaan.opsi.map((opsi) => {
+                    let colorClass =
+                      "peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10"; // Default
+
+                    if (opsi.value === 1) {
+                      colorClass =
+                        "peer-data-[state=checked]:border-red-500 peer-data-[state=checked]:bg-red-50 peer-data-[state=checked]:text-red-700";
+                    } else if (opsi.value === 2) {
+                      colorClass =
+                        "peer-data-[state=checked]:border-orange-500 peer-data-[state=checked]:bg-orange-50 peer-data-[state=checked]:text-orange-700";
+                    } else if (opsi.value === 3) {
+                      colorClass =
+                        "peer-data-[state=checked]:border-blue-500 peer-data-[state=checked]:bg-blue-50 peer-data-[state=checked]:text-blue-700";
+                    } else if (opsi.value === 4) {
+                      colorClass =
+                        "peer-data-[state=checked]:border-green-600 peer-data-[state=checked]:bg-green-100 peer-data-[state=checked]:text-green-800";
+                    }
+
+                    return (
+                      <div key={opsi.value}>
+                        <RadioGroupItem
+                          value={opsi.value.toString()}
+                          id={`${pertanyaan.key}-${opsi.value}`}
+                          className="peer sr-only"
+                        />
+                        <Label
+                          htmlFor={`${pertanyaan.key}-${opsi.value}`}
+                          className={`flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-border bg-background p-4 cursor-pointer transition-all hover:bg-muted hover:scale-105 peer-data-[state=checked]:shadow-md ${colorClass}`}
+                        >
+                          <span className="text-3xl">{opsi.emoji}</span>
+                          <span className="text-xs text-center font-medium leading-tight">
+                            {opsi.label}
+                          </span>
+                        </Label>
+                      </div>
+                    );
+                  })}
                 </RadioGroup>
               </div>
             ))}
