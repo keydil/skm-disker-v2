@@ -62,7 +62,7 @@ export default function LoginPage() {
               />
               {/* -------------------- */}
 
-              <span className="text-xl font-semibold">SKM</span>
+              <span className="text-xl font-semibold">SKM Disnaker Bandung</span>
             </Link>
           </div>
 
