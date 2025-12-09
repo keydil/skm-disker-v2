@@ -173,7 +173,7 @@ export function IKMAnalysisDashboard({ surveys }: Props) {
               ) : (
                 <>
                   <Download className="mr-2 h-4 w-4" />
-                  Export Excel
+                  Export to Excel
                 </>
               )}
             </Button>
