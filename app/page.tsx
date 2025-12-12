@@ -235,7 +235,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="border-t border-border bg-card py-6">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          Survey Kepuasan Masyarakat - Pelayanan Publik
+          Survey Kepuasan Masyarakat - Disnaker KOta Bandung
         </div>
       </footer>
     </div>
