@@ -43,6 +43,7 @@ export function SurveyTable({ surveys }: SurveyTableProps) {
             <TableHead>Nama</TableHead>
             <TableHead>Jenis Kegiatan</TableHead>
             {/* <TableHead className="text-center">Rata-rata</TableHead> */}
+            <TableHead className="w-[300px]">Kritik & Saran</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -58,6 +59,15 @@ export function SurveyTable({ surveys }: SurveyTableProps) {
                       ? survey.jenis_kegiatan_lainnya
                       : getKegiatanLabel(survey.jenis_kegiatan)}
                   </span>
+                </TableCell>
+                <TableCell className="align-top">
+                  {survey.kritik_saran ? (
+                    <p className="line-clamp-2 text-sm text-muted-foreground" title={survey.kritik_saran}>
+                      {survey.kritik_saran}
+                    </p>
+                  ) : (
+                    <span className="text-muted-foreground/30">-</span>
+                  )}
                 </TableCell>
                 {/* <TableCell className="text-center">
                   <Badge
