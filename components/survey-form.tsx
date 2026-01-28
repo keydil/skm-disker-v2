@@ -105,7 +105,7 @@ export function SurveyForm() {
       return "Umur wajib diisi";
     }
     if (isNaN(umurNum) || umurNum < 15) {
-      return "Umur minimal 15 tahun";
+      return "Umur minimal 17 tahun";
     }
     if (umurNum > 100) {
       return "Umur maksimal 100 tahun";
@@ -456,7 +456,7 @@ export function SurveyForm() {
                   />
                   <ErrorMessage message={validationErrors.umur} />
                   <p className="text-xs text-muted-foreground">
-                    Minimal 15 tahun
+                    Minimal 17 tahun
                   </p>
                 </div>
 
